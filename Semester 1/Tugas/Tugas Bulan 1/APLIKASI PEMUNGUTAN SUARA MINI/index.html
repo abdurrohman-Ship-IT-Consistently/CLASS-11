@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Voting App - HSI BS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">🗳️ Mini Voting</div>
+            <button id="fullscreen-btn" class="btn-secondary">⛶ Fullscreen</button>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="grid-container">
+            <!-- Panel Kiri: Voting -->
+            <section class="voting-panel">
+                <div class="badges">
+                    <span class="badge gray">📊 Classroom Poll</span>
+                    <span class="badge green">🟢 Voting Open</span>
+                </div>
+                
+                <h1>Materi coding mana yang paling seru untuk dipelajari?</h1>
+                
+                <div class="description-box">
+                    <strong>Mini Voting App</strong>
+                    <p>Pilih satu opsi, lihat hasil langsung, lalu reset untuk sesi berikutnya.</p>
+                </div>
+
+                <div class="voting-options">
+                    <button class="vote-btn red" data-choice="html">
+                        <span class="icon">▲</span> HTML Structure
+                    </button>
+                    <button class="vote-btn blue" data-choice="css">
+                        <span class="icon">◆</span> CSS Styling
+                    </button>
+                    <button class="vote-btn yellow" data-choice="js">
+                        <span class="icon">●</span> JavaScript DOM
+                    </button>
+                    <button class="vote-btn green-btn" data-choice="project">
+                        <span class="icon">■</span> Mini Project
+                    </button>
+                </div>
+            </section>
+
+            <!-- Panel Kanan: Live Results -->
+            <section class="results-panel">
+                <h2>Live Results</h2>
+                
+                <div class="total-votes-box">
+                    <span id="total-count">0</span>
+                    <span class="total-label">Total Votes</span>
+                </div>
+
+                <div class="progress-container" id="progress-container">
+                    <!-- Progress bars akan di-generate oleh JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer / Controls -->
+        <footer>
+            <div class="feedback" id="feedback-toast">
+                <!-- Pesan masuk di sini -->
+            </div>
+            <div class="controls">
+                <button id="close-voting-btn" class="btn-secondary">🔒 Close Voting</button>
+                <button id="reset-btn" class="btn-secondary">🔄 Reset</button>
+            </div>
+        </footer>
+        
+        <div class="credits">Made with 🤍 in HSI Boarding School 2026</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

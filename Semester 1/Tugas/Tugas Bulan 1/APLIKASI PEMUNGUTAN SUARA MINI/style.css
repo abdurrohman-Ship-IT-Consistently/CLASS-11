@@ -1,0 +1,269 @@
+:root {
+    --bg-color: #5b21b6; /* Latar belakang ungu */
+    --panel-left: #ffffff;
+    --panel-right: rgba(255, 255, 255, 0.15);
+    
+    /* Warna Kandidat */
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --yellow: #eab308;
+    --green: #22c55e;
+    
+    --text-dark: #1e293b;
+    --text-light: #ffffff;
+    --border-radius-lg: 24px;
+    --border-radius-md: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4c1d95, #7c3aed);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: white;
+    color: var(--bg-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* Panel Kiri (Voting) */
+.voting-panel {
+    background: var(--panel-left);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.badge.gray { background: #f1f5f9; color: #475569; }
+.badge.green { background: #dcfce7; color: #166534; }
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.description-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.description-box strong {
+    color: #6366f1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.description-box p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Tombol Voting */
+.voting-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.vote-btn {
+    border: none;
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.vote-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.vote-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.vote-btn.red { background-color: var(--red); }
+.vote-btn.blue { background-color: var(--blue); }
+.vote-btn.yellow { background-color: var(--yellow); color: #854d0e; }
+.vote-btn.green-btn { background-color: var(--green); }
+
+/* Panel Kanan (Results) */
+.results-panel {
+    background: var(--panel-right);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    color: var(--text-light);
+}
+
+.results-panel h2 {
+    margin-bottom: 20px;
+}
+
+.total-votes-box {
+    background: white;
+    color: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#total-count {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.total-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Progress Bars */
+.progress-item {
+    margin-bottom: 15px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-track {
+    background: rgba(255, 255, 255, 0.2);
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.5s ease-out;
+}
+
+/* Footer Controls */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.feedback {
+    font-weight: bold;
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.feedback.show {
+    opacity: 1;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.credits {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
